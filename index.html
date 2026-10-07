@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prashant Kishor Azad | Java Developer & Founder @ Icogon</title>
+<meta name="description" content="Portfolio of Prashant Kishor Azad - Java Programmer, Full Stack Developer, AI Enthusiast and Founder of Icogon Private Limited." />
+
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Animated background layers -->
+<div class="bg-gradient"></div>
+<div class="bg-grid"></div>
+<div class="bg-glow glow-1"></div>
+<div class="bg-glow glow-2"></div>
+<div class="bg-glow glow-3"></div>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#home" class="logo">
+    <div class="logo-mark">P</div>
+    <div class="logo-text">
+      <span>PRASHANT</span>
+      <small>PORTFOLIO</small>
+    </div>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#icogon">Icogon</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#stats">Statistics</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="#contact" class="btn btn-outline">Contact <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="dot"></span> Available for Freelance & Collaboration</div>
+
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar-ring ring-2"></div>
+      <img src="assets/profile.jpg" alt="Prashant Kishor Azad" class="avatar" />
+    </div>
+
+    <p class="greet">Hi, I'm <span>Prashant Kishor Azad</span> 👋</p>
+
+    <h1 class="title">
+      I'm a <span id="typed-text" class="grad-text">Java Programmer</span><span class="cursor">|</span>
+    </h1>
+
+    <p class="subtitle">
+      Full-stack developer, AI enthusiast and founder of
+      <b>Icogon Private Limited</b> — an AI-powered website builder that creates
+      complete websites from a single prompt. I love building scalable products
+      with Java, Spring Boot, Python and modern web tech.
+    </p>
+
+    <div class="hero-btns">
+      <a href="https://www.linkedin.com/in/prashant-kishor-azad" target="_blank" class="btn btn-outline">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">
+        <i class="fa-solid fa-file-arrow-down"></i> My Resume
+      </a>
+    </div>
+
+    <div class="hero-socials">
+      <a href="https://github.com/Prashantkishorazad" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/prashant-kishor-azad" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://x.com/_PrashantKishor" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="mailto:prashantkishorggv@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="section-head">
+    <span class="section-tag">01 — About Me</span>
+    <h2>A developer who loves <span class="grad-text">building</span> things</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="card glass">
+      <i class="fa-solid fa-user-astronaut"></i>
+      <h3>Who I Am</h3>
+      <p>Final-year B.Tech IT student at Guru Ghasidas Central University, Bilaspur. Passionate about Java, AI and building products that solve real problems.</p>
+    </div>
+    <div class="card glass">
+      <i class="fa-solid fa-rocket"></i>
+      <h3>What I Do</h3>
+      <p>Full-stack development, Machine Learning models, Cyber Security, and shipping startup-grade products from idea to deployment.</p>
+    </div>
+    <div class="card glass">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>What Drives Me</h3>
+      <p>Curiosity. Every project I build teaches me something new — from malware detection to AI-powered website generation.</p>
+    </div>
+  </div>
+
+  <h3 class="tech-title">Tech Stack</h3>
+  <div class="tech-grid">
+    <div class="tech-box"><i class="fa-brands fa-java"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-python"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-js"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-html5"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-css3-alt"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-git-alt"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-github"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-node-js"></i></div>
+    <div class="tech-box"><i class="fa-solid fa-leaf"></i></div>
+    <div class="tech-box"><i class="fa-solid fa-database"></i></div>
+    <div class="tech-box"><i class="fa-solid fa-brain"></i></div>
+    <div class="tech-box"><i class="fa-solid fa-shield-halved"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-figma"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-android"></i></div>
+    <div class="tech-box"><i class="fa-solid fa-fire"></i></div>
+    <div class="tech-box"><i class="fa-brands fa-docker"></i></div>
+  </div>
+</section>
+
+<!-- ICOGON -->
+<section class="section icogon" id="icogon">
+  <div class="section-head">
+    <span class="section-tag">02 — My Startup</span>
+    <h2>Founder of <span class="grad-text">Icogon Private Limited</span></h2>
+  </div>
+
+  <div class="icogon-card glass">
+    <div class="icogon-visual">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="icogon-logo"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+    </div>
+
+    <div class="icogon-info">
+      <h3>Icogon.AI — Prompt to Website 🚀</h3>
+      <p>Icogon is an AI-powered platform where anyone can build a complete, production-ready website just by typing a prompt. I designed and developed the entire platform — from UI/UX and the AI prompt engine to backend architecture and deployment — end to end.</p>
+
+      <ul class="icogon-features">
+        <li><i class="fa-solid fa-check"></i> Prompt-based full website generation</li>
+        <li><i class="fa-solid fa-check"></i> Modern, responsive layouts out of the box</li>
+        <li><i class="fa-solid fa-check"></i> AI content + design automation</li>
+        <li><i class="fa-solid fa-check"></i> End-to-end built by me</li>
+      </ul>
+
+      <div class="tags">
+        <span>Next.js</span><span>AI</span><span>Node.js</span><span>TailwindCSS</span><span>Full Stack</span>
+      </div>
+
+      <div class="icogon-btns">
+        <a href="https://github.com/Prashantkishorazad" target="_blank" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> View on GitHub
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fa-solid fa-paper-plane"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section experience" id="experience">
+  <div class="section-head">
+    <span class="section-tag">03 — Experience</span>
+    <h2>Where I've <span class="grad-text">worked</span></h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item glass">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Aug 2024 — Present</div>
+      <div class="timeline-content">
+        <h3>Founder — Icogon Private Limited</h3>
+        <p>Built a full AI-powered website builder where users generate complete websites from a single prompt. Handled product design, backend, AI integration and deployment end-to-end.</p>
+        <div class="tags"><span>Next.js</span><span>AI</span><span>Node.js</span><span>Full Stack</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item glass">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2024 — 2025</div>
+      <div class="timeline-content">
+        <h3>Cyber Security Intern — CDAC Noida</h3>
+        <p>45-day virtual internship. Hands-on with Google Dorks, Amass and Nmap for reconnaissance and vulnerability assessment on real targets.</p>
+        <div class="tags"><span>Nmap</span><span>Amass</span><span>OSINT</span><span>Recon</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item glass">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2023 — 2024</div>
+      <div class="timeline-content">
+        <h3>Cyber Security Intern — CyberZero</h3>
+        <p>Worked on cyber laws, digital forensics, OSINT and vulnerability assessment across real-world scenarios and threat analysis.</p>
+        <div class="tags"><span>Forensics</span><span>OSINT</span><span>Cyber Law</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item glass">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2022 — 2024</div>
+      <div class="timeline-content">
+        <h3>Graphic Designer — Google Developer Students Club</h3>
+        <p>Designed posters, banners and event creatives for GDSC using Figma, Canva and Premiere Pro.</p>
+        <div class="tags"><span>Figma</span><span>Canva</span><span>Premiere Pro</span></div>
+      </div>
+    </div>
+
+    <div class="timeline-item glass">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2023 — 2024</div>
+      <div class="timeline-content">
+        <h3>GFG PR Team Lead</h3>
+        <p>Led the Tech team and managed sponsorships for GeeksforGeeks student chapter.</p>
+        <div class="tags"><span>Leadership</span><span>Sponsorship</span><span>Public Relations</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section stats" id="stats">
+  <div class="section-head">
+    <span class="section-tag">04 — Coding Statistics</span>
+    <h2>My <span class="grad-text">coding journey</span></h2>
+    <p class="section-sub">An overview of platforms where I've solved problems and sharpened my DSA and problem-solving skills.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card glass">
+      <div class="stat-icon"><i class="fa-solid fa-code"></i></div>
+      <h3>LeetCode</h3>
+      <div class="stat-number">300+</div>
+      <p>Problems Solved</p>
+      <span class="stat-extra">Contest rating 1500+</span>
+      <a href="https://leetcode.com/" target="_blank" class="btn btn-primary small">Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+
+    <div class="stat-card glass">
+      <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+      <h3>GeeksforGeeks</h3>
+      <div class="stat-number">400+</div>
+      <p>Problems Solved</p>
+      <span class="stat-extra">Score 900+ • 100+ day streak</span>
+      <a href="https://www.geeksforgeeks.org/" target="_blank" class="btn btn-primary small">Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+
+    <div class="stat-card glass">
+      <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+      <h3>CodeChef</h3>
+      <div class="stat-number">250+</div>
+      <p>Problems Solved</p>
+      <span class="stat-extra">Global rank 26,026</span>
+      <a href="https://www.codechef.com/" target="_blank" class="btn btn-primary small">Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section work" id="work">
+  <div class="section-head">
+    <span class="section-tag">05 — Portfolio</span>
+    <h2>My Latest <span class="grad-text">Work</span></h2>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-card glass">
+      <div class="work-thumb thumb-1"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <div class="work-body">
+        <h3>Icogon.AI — Prompt to Website</h3>
+        <p>AI platform that builds complete websites from a single prompt. Built end-to-end by me as the founder.</p>
+        <div class="tags"><span>Next.js</span><span>AI</span><span>Full Stack</span></div>
+        <a href="https://github.com/Prashantkishorazad" target="_blank">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </div>
+
+    <div class="work-card glass">
+      <div class="work-thumb thumb-2"><i class="fa-solid fa-shield-virus"></i></div>
+      <div class="work-body">
+        <h3>Android Malware Detection</h3>
+        <p>ML system detecting Android malware using permissions, API calls and behavioral features.</p>
+        <div class="tags"><span>ML</span><span>Python</span><span>Security</span></div>
+      </div>
+    </div>
+
+    <div class="work-card glass">
+      <div class="work-thumb thumb-3"><i class="fa-solid fa-industry"></i></div>
+      <div class="work-body">
+        <h3>Predictive Maintenance + XR</h3>
+        <p>ML + Extended Reality system to forecast equipment failures with immersive diagnostics.</p>
+        <div class="tags"><span>ML</span><span>XR</span><span>IoT</span></div>
+      </div>
+    </div>
+
+    <div class="work-card glass">
+      <div class="work-thumb thumb-4"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div class="work-body">
+        <h3>Multi Disease Predictor</h3>
+        <p>Healthcare app predicting multiple diseases using Logistic Regression, Random Forest & SVM.</p>
+        <div class="tags"><span>ML</span><span>Healthcare</span></div>
+      </div>
+    </div>
+
+    <div class="work-card glass">
+      <div class="work-thumb thumb-5"><i class="fa-solid fa-language"></i></div>
+      <div class="work-body">
+        <h3>AI Multilingual Voice Translator</h3>
+        <p>Real-time voice translation using STT, NMT and TTS with low-latency NLP pipelines.</p>
+        <div class="tags"><span>NLP</span><span>Deep Learning</span></div>
+      </div>
+    </div>
+
+    <div class="work-card glass">
+      <div class="work-thumb thumb-6"><i class="fa-solid fa-robot"></i></div>
+      <div class="work-body">
+        <h3>AI Assistant</h3>
+        <p>Python-based assistant with Gemini AI, speech recognition, automation and computer vision.</p>
+        <div class="tags"><span>Gemini</span><span>Python</span><span>CV</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="section-head">
+    <span class="section-tag">06 — Contact</span>
+    <h2>Let's build something <span class="grad-text">great</span></h2>
+    <p class="section-sub">Got a project, collab idea or just want to say hi? I'm all ears.</p>
+  </div>
+
+  <div class="contact-grid">
+    <a href="mailto:prashantkishorggv@gmail.com" class="contact-card glass">
+      <i class="fa-solid fa-envelope"></i><h4>Email</h4><p>prashantkishorggv@gmail.com</p>
+    </a>
+    <a href="tel:+918077443785" class="contact-card glass">
+      <i class="fa-solid fa-phone"></i><h4>Phone</h4><p>+91 8077443785</p>
+    </a>
+    <a href="https://www.linkedin.com/in/prashant-kishor-azad" target="_blank" class="contact-card glass">
+      <i class="fa-brands fa-linkedin"></i><h4>LinkedIn</h4><p>prashant-kishor-azad</p>
+    </a>
+    <a href="https://github.com/Prashantkishorazad" target="_blank" class="contact-card glass">
+      <i class="fa-brands fa-github"></i><h4>GitHub</h4><p>Prashantkishorazad</p>
+    </a>
+    <a href="https://x.com/_PrashantKishor" target="_blank" class="contact-card glass">
+      <i class="fa-brands fa-x-twitter"></i><h4>X (Twitter)</h4><p>@_PrashantKishor</p>
+    </a>
+    <a href="assets/resume.pdf" target="_blank" class="contact-card glass">
+      <i class="fa-solid fa-file-arrow-down"></i><h4>Resume</h4><p>Download PDF</p>
+    </a>
+  </div>
+
+  <div class="contact-cta">
+    <a href="mailto:prashantkishorggv@gmail.com" class="btn btn-primary big">
+      <i class="fa-solid fa-paper-plane"></i> Submit Now
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="logo">
+      <div class="logo-mark">P</div>
+      <div class="logo-text"><span>PRASHANT</span><small>KISHOR AZAD</small></div>
+    </div>
+    <p class="footer-mail"><i class="fa-solid fa-envelope"></i> prashantkishorggv@gmail.com</p>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Prashant Kishor Azad. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/Prashantkishorazad" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/prashant-kishor-azad" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://x.com/_PrashantKishor" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
