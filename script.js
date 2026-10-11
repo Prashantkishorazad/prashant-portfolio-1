@@ -124,3 +124,26 @@ function getBotReply(query) {
 document.querySelectorAll('.footer-email, .footer-bottom').forEach((el) => {
   el.textContent = el.textContent.toLowerCase();
 });
+
+// Scroll to top on footer link click
+document.querySelectorAll('.footer-link').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href");
+    if (href === "#home" || href === "#top" || href === "#") {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
+// Ensure top link works
+const topLinks = document.querySelectorAll('a[href="#home"], a[href="#top"]');
+topLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});

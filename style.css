@@ -17,7 +17,7 @@ html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--bg);
-  background-image: radial-gradient(circle, #e8e4d9 0.3px, transparent 0.6px);
+  background-image: radial-gradient(circle, #d4cfc0 0.35px, transparent 0.7px);
   background-size: 3px 3px;
   color: var(--ink);
   font-family: var(--sans);
@@ -1956,4 +1956,476 @@ footer.footer {
 .skills-title em,
 .section-head h2 em {
   color: var(--accent) !important;
+}
+
+/* Empty skills-block wrapper ki line hide karo */
+.skills-block:empty,
+.skills-block:not(:has(*)) {
+  display: none !important;
+  border: none !important;
+  border-top: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.skills-block {
+  border-top: none !important;
+}
+
+/* ============ CONTACT HEADING CENTER ============ */
+.contact .section-head {
+  display: block !important;
+  text-align: center !important;
+}
+
+.contact .section-num {
+  display: block !important;
+  text-align: center !important;
+  margin-bottom: 16px !important;
+}
+
+.contact .section-head h2 {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+/* Agar grid layout hai to override */
+.contact .section-head {
+  grid-template-columns: 1fr !important;
+  justify-items: center !important;
+}
+
+.contact .section-head h2 em {
+  text-align: center !important;
+}
+
+/* ============ CONTACT SECTION — UPPER LINE REMOVE ============ */
+.contact::before,
+.contact .section-head::before,
+section#contact::before {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+/* Contact section ka top border bhi hatao */
+section#contact {
+  border-top: none !important;
+}
+
+/* Aur agar section divider hai */
+.contact + .contact,
+.section + #contact {
+  border-top: none !important;
+}
+
+/* ============ EMAIL ARROW SMALL ============ */
+footer.footer .footer-email .arrow,
+footer.footer .footer-email .email-arrow,
+.footer-email .arrow {
+  font-size: 0.45em !important;    /* pehle 0.7em tha → ab 0.45em */
+  transform: translateY(-2px) !important;
+  opacity: 0.85 !important;
+}
+
+footer.footer .footer-email:hover .arrow {
+  font-size: 0.5em !important;
+  transform: translate(6px, -8px) !important;
+}
+
+/* ============ DARKER DOTS ============ */
+body {
+  background-image: radial-gradient(circle, #d4cfc0 0.35px, transparent 0.7px) !important;
+  background-size: 3px 3px !important;
+}
+
+/* ============ EXTRA ANIMATIONS v3 ============ */
+
+/* 1. Hero title letter-by-letter glow */
+@keyframes heroGlow {
+  0%, 100% { text-shadow: 0 0 0 transparent; }
+  50% { text-shadow: 0 0 30px rgba(229, 107, 31, 0.15); }
+}
+
+.hero-title {
+  animation: heroGlow 6s ease-in-out infinite;
+}
+
+/* 2. Photo border subtle pulse */
+@keyframes photoBorder {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(229, 107, 31, 0); }
+  50% { box-shadow: 0 0 0 6px rgba(229, 107, 31, 0.08); }
+}
+
+.fig-frame {
+  animation: photoFloat 6s ease-in-out infinite, photoBorder 4s ease-in-out infinite !important;
+}
+
+/* 3. Work item slide-in on scroll */
+@keyframes workIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.work-item {
+  animation: workIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* 4. Project card scale-in */
+@keyframes cardScale {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.project-card {
+  animation: cardScale 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.15s; }
+.project-card:nth-child(3) { animation-delay: 0.2s; }
+.project-card:nth-child(4) { animation-delay: 0.25s; }
+.project-card:nth-child(5) { animation-delay: 0.3s; }
+.project-card:nth-child(6) { animation-delay: 0.35s; }
+
+/* 5. Certificate link hover arrow */
+@keyframes certArrow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(4px, -4px); }
+}
+
+.cert-link:hover {
+  animation: certArrow 0.8s ease-in-out infinite;
+}
+
+/* 6. Filter buttons wiggle on hover */
+@keyframes filterWiggle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-1deg); }
+  75% { transform: translateY(-3px) rotate(1deg); }
+}
+
+.filter:hover {
+  animation: filterWiggle 0.6s ease-in-out;
+}
+
+/* 7. Contact input focus glow */
+@keyframes inputGlowFocus {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(229, 107, 31, 0); }
+  50% { box-shadow: 0 0 0 6px rgba(229, 107, 31, 0.12); }
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  animation: inputGlowFocus 2s ease-in-out infinite;
+}
+
+/* 8. Submit button pulse */
+@keyframes submitPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(26, 26, 26, 0); }
+  50% { box-shadow: 0 0 0 8px rgba(26, 26, 26, 0.08); }
+}
+
+.form-btn {
+  animation: submitPulse 3s ease-in-out infinite;
+}
+
+.form-btn:hover {
+  animation: none;
+}
+
+/* 9. Section numbers pulse */
+@keyframes numFade {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; color: var(--accent); }
+}
+
+.section-num {
+  animation: numFade 4s ease-in-out infinite;
+}
+
+/* 10. Status dot expand-contract */
+@keyframes statusDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+}
+
+.topbar .status-dot,
+.footer .status-dot {
+  animation: statusDot 2.2s ease-in-out infinite;
+}
+
+/* 11. Hero badge gradient shift */
+@keyframes badgeGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-badge {
+  background: linear-gradient(90deg, var(--glass) 0%, rgba(229, 107, 31, 0.06) 50%, var(--glass) 100%);
+  background-size: 200% 100%;
+  animation: badgeGradient 6s ease-in-out infinite;
+}
+
+/* 12. Ticker text smooth flow (enhanced) */
+@keyframes tickerGlowAlt {
+  0%, 100% { color: var(--ink-soft); }
+  50% { color: var(--accent); }
+}
+
+.ticker span:nth-child(odd) {
+  animation: tickerGlowAlt 5s ease-in-out infinite;
+}
+
+.ticker span:nth-child(even) {
+  animation: tickerGlowAlt 5s ease-in-out 1s infinite;
+}
+
+/* 13. AI bot float + rotate */
+@keyframes botFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-2deg); }
+  75% { transform: translateY(-3px) rotate(2deg); }
+}
+
+.ai-bot-toggle {
+  animation: botFloat 4s ease-in-out infinite;
+}
+
+/* 14. Footer heading shimmer */
+@keyframes footerShimmer {
+  0%, 100% { text-shadow: 0 0 0 transparent; }
+  50% { text-shadow: 0 0 40px rgba(229, 107, 31, 0.12); }
+}
+
+.footer-heading {
+  animation: footerShimmer 5s ease-in-out infinite;
+}
+
+/* 15. Contact heading glow */
+@keyframes contactGlow {
+  0%, 100% { text-shadow: 0 0 0 transparent; }
+  50% { text-shadow: 0 0 30px rgba(229, 107, 31, 0.2); }
+}
+
+.contact .section-head h2 em,
+.contact-big {
+  animation: contactGlow 4s ease-in-out infinite;
+}
+
+/* 16. Body fade-in on load */
+@keyframes bodyLoad {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: bodyLoad 1s ease-out !important;
+}
+
+/* 17. Section subtle reveal */
+@keyframes sectionReveal {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+  animation: sectionReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* 18. Smooth scroll behaviour */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 19. Cursor trail */
+@keyframes trailPulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.3); }
+}
+
+/* 20. Bio paragraph subtle glow */
+@keyframes bioGlow {
+  0%, 100% { color: var(--ink-soft); }
+  50% { color: var(--ink); }
+}
+
+.hero-sub,
+.about-center p {
+  animation: bioGlow 8s ease-in-out infinite;
+}
+
+/* ============ TOOLBELT SECTION ============ */
+.toolbelt {
+  padding: 100px 60px !important;
+  border-top: 1px solid var(--line) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.toolbelt .section-head {
+  display: grid !important;
+  grid-template-columns: 220px 1fr !important;
+  gap: 40px !important;
+  align-items: baseline !important;
+  margin-bottom: 70px !important;
+  text-align: left !important;
+}
+
+.toolbelt .section-num {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 2px !important;
+  color: var(--muted) !important;
+  text-transform: uppercase !important;
+  border-top: 1px solid var(--ink) !important;
+  padding-top: 14px !important;
+  display: inline-block !important;
+  width: 90% !important;
+}
+
+.toolbelt .section-head h2 {
+  font-family: var(--serif) !important;
+  font-size: clamp(38px, 4.5vw, 60px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -1.5px !important;
+  line-height: 1.1 !important;
+  color: var(--ink) !important;
+  text-align: left !important;
+}
+
+.toolbelt .section-head h2 em {
+  font-style: italic !important;
+  color: #6b6660 !important;
+}
+
+.toolbelt-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 40px !important;
+  padding-top: 20px !important;
+}
+
+.toolbelt-col .label {
+  font-family: var(--mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 2.5px !important;
+  color: var(--muted) !important;
+  text-transform: uppercase !important;
+  margin-bottom: 24px !important;
+  padding-bottom: 14px !important;
+  border-bottom: 1px solid var(--line) !important;
+  display: block !important;
+}
+
+.toolbelt-col ul {
+  list-style: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.toolbelt-col li {
+  font-family: var(--serif) !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.5px !important;
+  color: var(--ink) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: baseline !important;
+  gap: 12px !important;
+  padding: 6px 0 !important;
+  border-bottom: 1px solid transparent !important;
+  transition: 0.3s !important;
+}
+
+.toolbelt-col li:hover {
+  transform: translateX(4px) !important;
+  color: var(--accent) !important;
+}
+
+.toolbelt-col li span {
+  font-family: var(--mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 1.2px !important;
+  color: var(--muted) !important;
+  text-transform: lowercase !important;
+  white-space: nowrap !important;
+}
+
+/* ============ CONTACT SECTION KE UPAR WALI LINE REMOVE ============ */
+.toolbelt + .contact::before,
+.toolbelt + #contact::before,
+section.toolbelt + section#contact::before {
+  display: none !important;
+  content: none !important;
+}
+
+#contact::before,
+#contact::after,
+section#contact::before,
+section#contact::after {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+/* Contact section top border bhi hatao */
+section#contact {
+  border-top: none !important;
+  padding-top: 100px !important;
+}
+
+/* ============ RESPONSIVE TOOLBELT ============ */
+@media (max-width: 1000px) {
+  .toolbelt { padding: 80px 30px !important; }
+  .toolbelt-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 30px !important; }
+  .toolbelt .section-head {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .toolbelt .section-num { width: 100% !important; }
+}
+
+@media (max-width: 640px) {
+  .toolbelt { padding: 60px 20px !important; }
+  .toolbelt-grid { grid-template-columns: 1fr !important; }
+  .toolbelt-col li { font-size: 18px !important; }
+}
+
+/* ============ FOOTER LINKS THODA NICHE ============ */
+footer.footer .footer-right,
+footer.footer .footer-links {
+  padding-top: 100px !important;
+  margin-top: 60px !important;
+  justify-content: flex-end !important;
+  align-self: end !important;
+}
+
+footer.footer .footer-link:first-child {
+  margin-top: 40px !important;
+}
+
+/* Poora footer inner grid bottom-align */
+footer.footer .footer-inner {
+  align-items: end !important;
+  min-height: 480px !important;
+}
+
+@media (max-width: 1000px) {
+  footer.footer .footer-right,
+  footer.footer .footer-links {
+    padding-top: 20px !important;
+    margin-top: 20px !important;
+  }
+  footer.footer .footer-link:first-child {
+    margin-top: 0 !important;
+  }
+  footer.footer .footer-inner {
+    min-height: auto !important;
+  }
 }
