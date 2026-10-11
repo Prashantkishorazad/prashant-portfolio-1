@@ -1,97 +1,24 @@
-// ============ TYPING EFFECT ============
-const roles = [
-  "Java Programmer",
-  "Full Stack Developer",
-  "AI Enthusiast",
-  "Founder @ Icogon",
-  "Problem Solver"
-];
 
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typedEl = document.getElementById("typed-text");
-
-function typeEffect() {
-  const current = roles[roleIndex];
-  charIndex += isDeleting ? -1 : 1;
-
-  typedEl.textContent = current.substring(0, charIndex);
-
-  let speed = isDeleting ? 50 : 110;
-
-  if (!isDeleting && charIndex === current.length) {
-    speed = 1600;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    roleIndex = (roleIndex + 1) % roles.length;
-    speed = 400;
-  }
-
-  setTimeout(typeEffect, speed);
-}
-typeEffect();
-
-// ============ CUSTOM CURSOR ============
-const cursorDot = document.getElementById("cursorDot");
-const cursorRing = document.getElementById("cursorRing");
-
-let mouseX = 0, mouseY = 0;
-let ringX = 0, ringY = 0;
-
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorDot.style.left = mouseX + "px";
-  cursorDot.style.top = mouseY + "px";
+// Project filter
+document.querySelectorAll(".filter").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
 });
 
-function animateRing() {
-  ringX += (mouseX - ringX) * 0.15;
-  ringY += (mouseY - ringY) * 0.15;
-  cursorRing.style.left = ringX + "px";
-  cursorRing.style.top = ringY + "px";
-  requestAnimationFrame(animateRing);
-}
-animateRing();
-
-// Hover effect on interactive elements
-document.querySelectorAll("a, button, .tech-box, .card, .work-card, .stat-card, .contact-card").forEach((el) => {
-  el.addEventListener("mouseenter", () => cursorRing.classList.add("hover"));
-  el.addEventListener("mouseleave", () => cursorRing.classList.remove("hover"));
-});
-
-// ============ NAVBAR SCROLL ============
-const navbar = document.getElementById("navbar");
-window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 40);
-});
-
-// ============ MOBILE MENU ============
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
-
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => navLinks.classList.remove("open"));
-});
-
-// ============ SMOOTH SCROLL ============
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const target = document.querySelector(this.getAttribute("href"));
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const target = document.querySelector(a.getAttribute("href"));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.scrollIntoView({ behavior: "smooth" });
     }
   });
 });
 
-// ============ SCROLL REVEAL ============
+// Reveal on scroll
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -102,12 +29,98 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.08 }
 );
 
-document.querySelectorAll(".section, .hero-inner").forEach((el) => {
+document.querySelectorAll(".section, .hero-grid, .work-item, .project-card, .writing-item").forEach((el) => {
   el.style.opacity = 0;
-  el.style.transform = "translateY(50px)";
-  el.style.transition = "all 0.9s cubic-bezier(0.16, 1, 0.3, 1)";
+  el.style.transform = "translateY(30px)";
+  el.style.transition = "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
   observer.observe(el);
+});
+// Force autoplay on video (some browsers need JS)
+document.querySelectorAll('video').forEach((vid) => {
+  vid.muted = true;
+  vid.play().catch(() => {
+    // silent fail — browser blocked
+  });
+});
+
+// ============ AI BOT ============
+const aiBotToggle = document.getElementById("aiBotToggle");
+const aiBotWindow = document.getElementById("aiBotWindow");
+const aiBotClose = document.getElementById("aiBotClose");
+const aiBotForm = document.getElementById("aiBotForm");
+const aiBotInput = document.getElementById("aiBotInput");
+const aiBotMessages = document.getElementById("aiBotMessages");
+
+if (aiBotToggle) {
+  aiBotToggle.addEventListener("click", () => {
+    aiBotWindow.classList.toggle("open");
+  });
+
+  aiBotClose.addEventListener("click", () => {
+    aiBotWindow.classList.remove("open");
+  });
+
+  aiBotForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const msg = aiBotInput.value.trim();
+    if (!msg) return;
+
+    // Add user message
+    const userMsg = document.createElement("div");
+    userMsg.className = "ai-msg ai-msg-user";
+    userMsg.textContent = msg;
+    aiBotMessages.appendChild(userMsg);
+    aiBotInput.value = "";
+
+    // Scroll
+    aiBotMessages.scrollTop = aiBotMessages.scrollHeight;
+
+    // Bot reply (simple rule-based)
+    setTimeout(() => {
+      const reply = getBotReply(msg);
+      const botMsg = document.createElement("div");
+      botMsg.className = "ai-msg ai-msg-bot";
+      botMsg.textContent = reply;
+      aiBotMessages.appendChild(botMsg);
+      aiBotMessages.scrollTop = aiBotMessages.scrollHeight;
+    }, 600);
+  });
+}
+
+function getBotReply(query) {
+  const q = query.toLowerCase();
+
+  if (q.includes("icogon")) {
+    return "Icogon Private Limited is Prashant's startup — an AI platform that turns a single prompt into a live website or mobile app. Live at www.icogon.com.";
+  }
+  if (q.includes("skill") || q.includes("tech") || q.includes("language")) {
+    return "Prashant works with Java, Python, C++, JavaScript, Spring Boot, PyTorch, LangChain, Node.js, MongoDB, MySQL and more.";
+  }
+  if (q.includes("project")) {
+    return "Prashant has built Icogon.AI, Android Malware Detection, Multi Disease Predictor, Predictive Maintenance with XR, AI Language Translator and an AI Assistant.";
+  }
+  if (q.includes("experience") || q.includes("work") || q.includes("intern")) {
+    return "He interned at CDAC Noida and Cyber Council of India in cybersecurity, and led PR & Tech at GFG and design at GDSC.";
+  }
+  if (q.includes("contact") || q.includes("email") || q.includes("reach")) {
+    return "You can reach Prashant at prashantkishorggv@gmail.com or +91 8077443785.";
+  }
+  if (q.includes("education") || q.includes("college") || q.includes("degree")) {
+    return "Prashant completed his B.Tech in IT from Guru Ghasidas Central University, Bilaspur (2021–2025) with a CGPA of 7.2.";
+  }
+  if (q.includes("hire") || q.includes("job") || q.includes("role")) {
+    return "Prashant is actively looking for AI Engineering, SDE and Full-Stack roles. Reach out at prashantkishorggv@gmail.com.";
+  }
+  if (q.includes("hi") || q.includes("hello") || q.includes("hey")) {
+    return "Hey! Ask me about Prashant's projects, Icogon, skills, experience or how to contact him.";
+  }
+  return "I don't have an answer for that yet. Try asking about Icogon, projects, skills, experience, education or contact info.";
+}
+
+// Force email lowercase in footer
+document.querySelectorAll('.footer-email, .footer-bottom').forEach((el) => {
+  el.textContent = el.textContent.toLowerCase();
 });

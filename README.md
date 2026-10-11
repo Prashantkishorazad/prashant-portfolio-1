@@ -1,27 +1,16 @@
 # Prashant-Portfolio
 
-Personal portfolio of **Prashant Kishor Azad** — Java Programmer, Full Stack Developer, AI Enthusiast and Founder of **Icogon Private Limited**.
+Editorial-minimal portfolio of **Prashant Kishor Azad** — Java Programmer, Full Stack Developer, Founder of **Icogon Private Limited** (April 2026).
 
-## 🚀 Sections
-- Hero / Intro with typing effect
-- About + Tech Stack
-- Icogon Private Limited showcase
-- Experience timeline
-- Coding Statistics (LeetCode, GFG, CodeChef)
-- Latest Work / Projects
-- Contact
+## 🎨 Design
+Editorial / newspaper inspired. Cream dot-grid background, warm orange accent, serif headings.
 
-## 🛠️ Tech Used
-- HTML5
-- CSS3 (dark theme + glassmorphism + gradient animations)
-- Vanilla JavaScript (typing effect, custom cursor, scroll reveal)
+## 🛠 Tech
+HTML5 · CSS3 · Vanilla JavaScript
 
 ## 📬 Contact
-- 📧 Email: prashantkishorggv@gmail.com
-- 📱 Phone: +91 8077443785
-- 💼 LinkedIn: [prashant-kishor-azad](https://www.linkedin.com/in/prashant-kishor-azad)
-- 🐙 GitHub: [Prashantkishorazad](https://github.com/Prashantkishorazad)
-- 🐦 X: [@_PrashantKishor](https://x.com/_PrashantKishor)
-
-## ▶️ Run Locally
-Just open `index.html` in a browser, or use VS Code Live Server.
+- 📧 prashantkishorggv@gmail.com
+- 📱 +91 8077443785
+- 💼 [LinkedIn](https://www.linkedin.com/in/prashant-kishor-azad)
+- 🐙 [GitHub](https://github.com/Prashantkishorazad)
+- 🐦 [X](https://x.com/_PrashantKishor)

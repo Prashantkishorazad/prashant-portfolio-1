@@ -1,0 +1,51 @@
+// Live IST clock
+function updateClock() {
+  const now = new Date();
+  const ist = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+  const h = String(ist.getHours()).padStart(2, "0");
+  const m = String(ist.getMinutes()).padStart(2, "0");
+  const el = document.querySelector(".topbar-right .muted");
+  if (el) el.textContent = `IST · ${h}:${m}`;
+}
+updateClock();
+setInterval(updateClock, 30000);
+
+// Project filter
+document.querySelectorAll(".filter").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const target = document.querySelector(a.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.08 }
+);
+
+document.querySelectorAll(".section, .hero-grid, .work-item, .project-card, .writing-item").forEach((el) => {
+  el.style.opacity = 0;
+  el.style.transform = "translateY(30px)";
+  el.style.transition = "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
+  observer.observe(el);
+});
